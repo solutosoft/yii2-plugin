@@ -28,25 +28,6 @@ class SelectWidget extends InputWidget
     public $selected = [];
 
     /**
-     * @var string the javascript template function used to initialize selected item.
-     * For use this resource is necessary to add a global javascript function with following template declaration
-     *
-     * For example:
-     *
-     * ```js
-     * function kendoInitSelected(e, value, selected) {
-     *     var results = e.response[e.sender.options.schema.data],
-     *         contains = jQuery.grep(results, function(item){return item.id == value});
-     *
-     *     if (contains.length == 0) {
-     *         results.unshift(selected);
-     *     }
-     * }
-     * ```
-     */
-    public $initSelectedTemplate = 'kendoInitSelected(e, {value}, {selected});';
-
-    /**
      * @inheritdoc
      */
     public function run()
@@ -67,18 +48,6 @@ class SelectWidget extends InputWidget
         }
 
         $this->pluginOptions['value'] = $value;
-
-        if (!empty($this->selected) && array_filter(array_values($this->selected))) {
-            $selected = Json::encode($this->selected);
-            $template = strtr($this->initSelectedTemplate,['{value}' => $value, '{selected}' => $selected]);
-
-            $this->pluginOptions = ArrayHelper::merge([
-                'dataSource' => [
-                    'requestEnd' => new JsExpression("function(e){ $template }")
-                ]
-            ], $this->pluginOptions);
-        }
-
         $this->registerPlugin($id);
     }
 }
