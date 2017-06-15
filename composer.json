@@ -1,0 +1,27 @@
+{
+    "name": "solutosoft/yii2-plugin",
+    "description": "Yii 2 core code to write extensions based on javascript plugins",
+    "keywords": ["yii", "yii2", "widget", "plugin", "core"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/solutosoft/yii2-plugin/issues",
+        "source": "https://github.com/solutosoft/yii2-plugin"
+    },
+    "minimum-stability": "dev",
+    "authors": [{
+        "name": "Leandro Guindani Gehlen",
+        "email": "leandrogehlen@gmail.com"
+    }],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "soluto\\plugin\\": ""
+        }
+    }
+}
