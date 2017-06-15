@@ -23,10 +23,23 @@ trait PluginTrait
      */
     public function registerPlugin($id)
     {
+        $view = $this->getView();
         $options = $this->pluginOptions ? Json::encode($this->pluginOptions) : '';
 
-        $view = $this->getView();
+        foreach ($this->assets() as $class) {
+            $class::register($view);
+        }
+
         $view->registerJs("jQuery('#$id').{$this->pluginName}($options);");
+    }
+
+    /**
+     * Returns the asset class name dependencies
+     * @return array the asset dependencies
+     */
+    protected function assets()
+    {
+        return [];
     }
 
 }
