@@ -4,6 +4,7 @@
     "keywords": ["yii", "yii2", "widget", "plugin", "core"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
+    "minimum-stability": "stable",
     "support": {
         "issues": "https://github.com/solutosoft/yii2-plugin/issues",
         "source": "https://github.com/solutosoft/yii2-plugin"
