@@ -8,7 +8,7 @@
         "issues": "https://github.com/solutosoft/yii2-plugin/issues",
         "source": "https://github.com/solutosoft/yii2-plugin"
     },
-    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [{
         "name": "Leandro Guindani Gehlen",
         "email": "leandrogehlen@gmail.com"
@@ -22,6 +22,11 @@
     "autoload": {
         "psr-4": {
             "soluto\\plugin\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
         }
     }
 }
